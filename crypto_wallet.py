@@ -11,7 +11,7 @@ import os
 import requests
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv("MNEMONIC.env")
 from bip44 import Wallet
 from web3 import Account
 from web3 import middleware
@@ -27,7 +27,7 @@ def generate_account():
     mnemonic = os.getenv("MNEMONIC")
 
     # Create Wallet Object
-    wallet = Wallet(mnemonic)
+    wallet = Wallet("MNEMONIC")
 
     # Derive Ethereum Private Key
     private, public = wallet.derive_account("eth")
