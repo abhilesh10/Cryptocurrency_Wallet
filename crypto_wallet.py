@@ -27,7 +27,7 @@ def generate_account():
     mnemonic = os.getenv("MNEMONIC")
 
     # Create Wallet Object
-    wallet = Wallet("MNEMONIC")
+    wallet = Wallet(mnemonic)
 
     # Derive Ethereum Private Key
     private, public = wallet.derive_account("eth")
